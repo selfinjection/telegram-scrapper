@@ -21,7 +21,7 @@ def get_groups(dialogs):
 
 
 def main():
-    with open('config.json') as file:
+    with open('config/config.json') as file:
         data = json.load(file)
     id, hash, phone = data['380939793299']['id'], data['380939793299']['hash'], data['380939793299']['phone']
     client = TelegramClient(phone, id, hash)
