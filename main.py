@@ -1,7 +1,7 @@
 import json
 from telethon.sync import TelegramClient
 
-class Session():
+class Session:
     def __init__(self, phone, id, hash):
         self.client = TelegramClient(phone, id, hash)
         self.client.connect()
