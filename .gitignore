@@ -1,6 +1,7 @@
 # Authentication
 *.session
 *.session-journal
+config/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
