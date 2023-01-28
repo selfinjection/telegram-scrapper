@@ -51,17 +51,20 @@ class Session:
 
 
 def main():
-    with open('config/config.json', 'r') as file:
-        data = json.load(file)
+    #with open('config/config.json', 'r') as file:
+    #    data = json.load(file)
 
-    id, hash, phone = data['380939793299']['id'], data['380939793299']['hash'], data['380939793299']['phone']
+    id, hash, phone = 123, 123, 123
 
     session = Session(phone, id, hash)
 
-    groups = session.get_groups()
-    msgs = session.get_messages(groups[0].title, limit=1000)
-    participants = session.get_participants(groups[0])
-    user_messages = session.find_user_message(msgs, 'Fiery0304')
+    # groups = session.get_groups()
+    group_title = '123'
+    user_to_find = 'Fiery0304'
+
+    msgs = session.get_messages(group_title, limit=1000)
+    participants = session.get_participants(group_title)
+    user_messages = session.find_user_message(msgs, user_to_find)
 
     with open('result.json', 'w', encoding='utf-8') as file:
         json.dump(user_messages, file, indent=4, ensure_ascii=False)
